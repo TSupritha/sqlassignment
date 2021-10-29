@@ -1,0 +1,219 @@
+Java-basic-Assignments : 
+
+1) Declare three number variables with value as 12,25,89 find the greatest number and display. 
+
+
+package com.sonata;
+
+public class GreatestOf3 {
+
+	public static void main(String[] args) {
+		
+int a=12, b=250, c=89; //declaring variables a,b,c
+if(a>b && a>c)// comparison using logical operator and if else statements
+	System.out.println("the greatest number is " +a);
+else if(b>a && b>c)
+	System.out.println("the greatest number is " +b);
+else 
+	System.out.println("the greatest number is " +c);
+
+	}
+
+}
+
+
+
+2) Write a java program to display the cube of the given number for ex: if given number is 2 then cube of it is 8 
+
+package com.sonata;
+public class CubeofaNum {
+public static void main(String[] args){
+int a=9;
+int cube;
+cube= a*a*a;
+System.out.println(cube);
+	
+}
+
+}
+
+3) Write a java program to sum values of an array. For example a[5] ={1,2,3,4,5,6} the sum of the values is 21. 
+package com.sonata;
+
+public class sumofArrayElemnts {
+public static void main(String[] args)
+{
+	 int [] arr = new int [] {1, 2, 3, 4, 5};  
+     int sum = 0;  
+     //Loop through the array to calculate sum of elements  
+     for (int i = 0; i < arr.length; i++) {  
+        sum = sum + arr[i];  
+     }  
+     System.out.println("Sum of all the elements of an array: " + sum); 
+}
+
+}
+
+4) Write a java program to test if an array contains a specific value 
+
+package com.sonata;
+
+public class Find_spcfc_value {
+
+	public static void main(String[] args) {
+		 int[] num = {1, 2, 3, 4, 5};
+		    int toFind = 3;
+		    boolean found = false;
+
+		    for (int n : num) {
+		      if (n == toFind) {
+		        found = true;
+		        break;
+		      }
+		    }
+		    
+		    if(found)
+		      System.out.println(toFind + " is found.");
+		    else
+		      System.out.println(toFind + " is not found.");
+		 
+	}
+
+}
+
+5) Write a java program to reverse an array of integer values. 
+package com.sonata;
+
+public class Rev_Arrayint {
+	public static void main(String[] args)
+	{
+
+	  int [] arr = new int [] {1, 2, 3, 4, 5};  
+      System.out.println("Original array: ");  
+      for (int i = 0; i < arr.length; i++) {  
+          System.out.print(arr[i] + " ");  
+      }  
+      System.out.println();  
+      System.out.println("Array in reverse order: ");  
+      //Loop through the array in reverse order  
+      for (int i = arr.length-1; i >= 0; i--) {  
+          System.out.print(arr[i] + " ");  
+
+}
+}
+}
+
+
+6) Read the String and replace Ovals with dollar symbol program 
+package com.sonata;
+
+public class Oval_Dollar {
+	public static void main(String[] args)
+	{
+	String st="an apple a day keeps the doctor away";
+	char ch[]=st.toCharArray();
+	for (int i = 0; i < ch.length; i++)
+	{
+	if (ch[i]=='a' ||  ch[i]=='e'  || ch[i]=='i'  || ch[i]=='o' || ch[i]=='u')
+	ch[i]='$'; //replacing $
+	
+	}
+	for (int i = 0; i < ch.length; i++) {
+	System.out.print(ch[i]);
+	}
+	}
+
+}
+
+
+7) Write a program to identify duplicate values in an array 
+
+package com.sonata;
+
+public class Duplicates_inarray {
+	public static void main(String[] args)
+	{
+		 int [] arr = new int [] {1, 2, 3, 4, 2, 7, 8, 8, 3};   
+         
+	        System.out.println("Duplicate elements in given array: ");  
+	        //Searches for duplicate element  
+	        for(int i = 0; i < arr.length; i++) {  
+	            for(int j = i + 1; j < arr.length; j++) {  
+	                if(arr[i] == arr[j])  
+	                    System.out.println(arr[j]);  
+	               
+	                }  
+	       
+	        }  
+    
+	
+	}  
+	}  
+
+8) Read the highest count of duplicates from array of integers 
+
+package com.sonata;
+import java.util.*;
+public class HighestCount_Duplicates {
+	public static void main(String args[]) {
+	    int[] inputArray = { 4, 4, 10, 4, 10 };
+	    Map<Integer, Integer> hMap = new HashMap<Integer, Integer>();
+	    HashSet<Integer> hSet = new HashSet<Integer>();
+	    for (int i : inputArray) {
+	        if (hSet.add(i)) {
+	            hMap.put(i, 1);
+	        } else {
+	            hMap.put(i, hMap.get(i) + 1);
+	        }
+	    }
+	    Iterator<Integer> iter = hMap.values().iterator();
+	    int temp = 0;
+	    while (iter.hasNext()) {
+	        int max = iter.next();
+	        if (max > temp) {
+	            temp = max;
+	        }
+	    }
+	    System.out.println(temp);
+	}
+}
+
+
+9) 10)Write a program to identify 2 large numbers in an array.  
+package com.sonata;
+
+public class Two_largest_num {
+	 public static void main(String args[])
+	 {
+	 int arr[]=new int[] {1, 2, 3, 4, 2, 7, 8, 8, 3};
+     int lar1=arr[0];   //Initialize the first largest element
+     int lar2=arr[1];   //Initialize the second largest element
+
+      //Check by swapping elements
+     int n=arr.length;
+            if(lar1<lar2)
+             {
+                 int temp=lar1;
+                 lar1=lar2;
+                 lar2=temp;
+             }
+             
+     for(int i=2;i<n;i++)
+     {
+         if (arr[i] > lar1)
+			{
+				lar2 = lar1;
+				lar1 = arr[i];
+			}
+			else if (arr[i] > lar2 && arr[i] != lar1)
+			{
+				lar2 = arr[i];
+			}
+     }
+     System.out.println("First Largest"+lar1);    //Display the first largest
+     System.out.println("Second Largest "+lar2);  //Display the second largest
+     
+    
+ }
+}
+
